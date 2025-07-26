@@ -1,10 +1,10 @@
 import streamlit as st
-from Resumo_geral_eq import mostrar_pagina_resumo
-from Desagregados_categoria import mostrar_pagina_categoria
-from Mapa import mostrar_pagina_mapa
-from Tendencia import mostrar_pagina_tendencia
+from resumo_geral_eq import mostrar_pagina_resumo
+from desagregados_categoria import mostrar_pagina_categoria
+from mapa import mostrar_pagina_mapa
+from tendencia import mostrar_pagina_tendencia
 from Analise_comparativa import mostrar_pagina_comparacao
-from Upload import mostrar_pagina_upload_etl
+from upload import mostrar_pagina_upload_etl
 
 # Configuração da interface
 st.set_page_config(page_title="Dashboard GEE - ALCOA", layout="wide")
