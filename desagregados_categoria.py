@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-from mapa import mostrar_pagina_mapa
+from Mapa import mostrar_pagina_mapa
 
 
 def mostrar_pagina_categoria():

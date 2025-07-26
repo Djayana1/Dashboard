@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
 def mostrar_pagina_tendencia():
-    st.title("Tendência – Emissões Equivalentes ao CO2 por Ano")
+    st.title("Tendência – Emissões (tCO2e) por Ano")
 
 
     # Carregar dados
@@ -33,7 +33,7 @@ def mostrar_pagina_tendencia():
     # Sidebar: seleção de escopos
     st.sidebar.header("Filtros")
     escopos_selecionados = st.sidebar.multiselect(
-        "Selecione os escopos EQ para análise", colunas_eq, default=colunas_eq
+        "Selecione os escopos para análise", colunas_eq, default=colunas_eq
     )
 
     if not escopos_selecionados:
@@ -47,24 +47,120 @@ def mostrar_pagina_tendencia():
     # Gráfico de linha interativo (Plotly)
     
     fig = px.line(
-        df_agrupado,
-        x="ANO",
-        y="Total EQ",
-        text=df_agrupado["Total EQ"].apply(lambda x: f"{x:,.0f}"),
-        markers=True,
-        title="Tendência das Emissões EQ (soma dos escopos selecionados)",
-        labels={"ANO": "Ano", "Total EQ": "Emissões (tCO2e)"}
-    )
+    df_agrupado,
+    x="ANO",
+    y="Total EQ",
+    text=df_agrupado["Total EQ"].apply(lambda x: f"{x:,.0f}"),
+    markers=True,
+    title="Tendência das Emissões (tCO2e) (soma dos escopos selecionados)",
+    labels={"ANO": "Ano", "Total EQ": "Emissões (tCO2e)"}
+)
 
     fig.update_traces(
-        line=dict(color="#1f77b4", width=3),
-        textposition="top center",
-        mode="lines+markers+text"
-    )
+    line=dict(color="black", width=3),
+    marker=dict(color="black"),
+    textposition="top center",
+    textfont=dict(size=14, color="black"),
+    mode="lines+markers+text"
+)
+
     fig.update_layout(
-        xaxis=dict(tickmode="linear", tickformat=".0f")
+    font=dict(size=14, color="black"),  # fonte geral
+    title_font=dict(size=18, color="black"),  # título
+    xaxis=dict(
+        title_font=dict(size=16, color="black"),
+        tickfont=dict(size=12, color="black"),
+        tickmode="linear",
+        tickformat=".0f"
+    ),
+    yaxis=dict(
+        title_font=dict(size=16, color="black"),
+        tickfont=dict(size=12, color="black")
     )
+)
+
     st.plotly_chart(fig, use_container_width=True)
+
+# 🔽 Novo gráfico: Tendência individual por escopo ao longo dos anos
+    st.subheader("Tendência por Escopo (tCO2e) ao longo dos Anos")
+
+# Agrupar por ano e somar os escopos
+    df_por_ano = df.groupby("ANO")[escopos_selecionados].sum().reset_index()
+
+# Derreter para formato longo
+    df_melt = df_por_ano.melt(id_vars="ANO", value_vars=escopos_selecionados, 
+                          var_name="Escopo", value_name="Emissões")
+
+# Gráfico de linha com uma linha para cada escopo
+    
+    fig_escopos = px.line(
+    df_melt,
+    x="ANO",
+    y="Emissões",
+    color="Escopo",
+    markers=True,
+    title="Tendência por Escopo (tCO2e)",
+    labels={"ANO": "Ano", "Emissões": "Emissões (tCO2e)"}
+)
+
+    fig_escopos.update_traces(
+    text=df_melt["Emissões"].apply(lambda x: f"{x:,.0f}"),
+    textposition="top center",
+    textfont=dict(size=12, color="black"),
+    mode="lines+markers+text"
+)
+
+    fig_escopos.update_layout(
+    font=dict(size=14, color="black"),
+    title_font=dict(size=18, color="black"),
+    xaxis=dict(
+        title_font=dict(size=16, color="black"),
+        tickfont=dict(size=12, color="black"),
+        tickmode="linear"
+    ),
+    yaxis=dict(
+        title_font=dict(size=16, color="black"),
+        tickfont=dict(size=12, color="black")
+    ),
+    legend_title=dict(text="Escopo", font=dict(size=14, color="black")),
+    legend=dict(font=dict(size=12, color="black"))
+)
+
+    st.plotly_chart(fig_escopos, use_container_width=True)
+
+    
+    # Exibir tabela formatada com separador de milhar
+    # Formatar valores numéricos
+    df_formatado = df_por_ano.copy()
+    for col in escopos_selecionados:
+        df_formatado[col] = df_formatado[col].apply(lambda x: f"{x:,.0f}")
+
+    # Estilo: preto no corpo e no cabeçalho
+    st.dataframe(
+        df_formatado.style
+            .set_properties(**{
+                'color': 'black',
+                'font-size': '14px',
+                'font-family': 'Arial'
+            })  # estilo para o corpo da tabela
+            .set_table_styles([
+                {
+                    'selector': 'th',
+                    'props': [('color', 'black'), ('font-size', '14px'), ('font-family', 'Arial')]
+                }
+            ]),  # estilo para o cabeçalho
+        use_container_width=True
+    )
+
+
+    # Botão para download da tabela em CSV
+    csv_eq_por_ano = df_por_ano.to_csv(index=False).encode('utf-8')
+    st.download_button(
+        label="⬇️ Baixar CSV - Totais dos Escopos por Ano",
+        data=csv_eq_por_ano,
+        file_name="totais_escopos_por_ano.csv",
+        mime="text/csv"
+    )
 
 
     # Gráfico de dispersão com regressão linear

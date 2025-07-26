@@ -44,21 +44,35 @@ def mostrar_pagina_resumo():
         ]
         indicador_selecionado = st.selectbox("Indicador EQ para o gráfico:", indicadores_disponiveis)
 
-    # Tabela de indicadores EQ
-    colunas_eq = ['GEE'] + indicadores_disponiveis
-    df_eq = df[[col for col in colunas_eq if col in df.columns]].copy()
-    st.subheader("Emissões de GEE (Indicadores EQ)")
-    st.dataframe(df_eq, use_container_width=True)
 
-    # Tabela de escopos diretos
+
+        # Tabela de escopos diretos
     colunas_escopos = [
         'GEE', 'Escopo 1', 'Escopo 2 - Baseada na localização', 'Escopo 2 - Baseada na escolha de compra', 'Escopo 3'
     ]
     df_escopos = df[[col for col in colunas_escopos if col in df.columns]].copy()
-    st.subheader("Emissões de GEE (Escopos Diretos)")
+    st.subheader("Emissões de GEE")
     st.dataframe(df_escopos, use_container_width=True)
 
-    # Gráfico de barras com rótulos
+    # Total da tabela de escopos diretos
+    totais_escopos = df_escopos.drop(columns='GEE').sum(numeric_only=True)
+    linha_total_escopos = pd.DataFrame([["Total"] + totais_escopos.tolist()], columns=df_escopos.columns)
+    st.dataframe(linha_total_escopos, use_container_width=True)
+
+    # Tabela de indicadores EQ
+    colunas_eq = ['GEE'] + indicadores_disponiveis
+    df_eq = df[[col for col in colunas_eq if col in df.columns]].copy()
+    st.subheader("Emissões de GEE (tCO2e)")
+    st.dataframe(df_eq, use_container_width=True)
+
+    # Total da tabela de indicadores EQ
+    totais_eq = df_eq.drop(columns='GEE').sum(numeric_only=True)
+    linha_total_eq = pd.DataFrame([["Total"] + totais_eq.tolist()], columns=df_eq.columns)
+    st.dataframe(linha_total_eq, use_container_width=True)
+
+
+
+    # Gráfico de barras com rótulos (EQ por GEE)
     ordem_gee = ['CO2', 'CH4', 'N2O', 'HFC', 'PFC', 'SF6', 'NF3']
     if 'GEE' in df.columns and indicador_selecionado in df.columns:
         df_plot = df[['GEE', indicador_selecionado]].copy()
@@ -89,7 +103,38 @@ def mostrar_pagina_resumo():
             title=f"Emissões por GEE - {indicador_selecionado}"
         )
 
-        st.subheader("Gráfico de Emissão por Indicador EQ")
+        st.subheader("Gráfico de Emissão (tCO2e)")
         st.altair_chart(chart, use_container_width=True)
     else:
         st.warning("Coluna 'GEE' ou indicador selecionado não encontrado.")
+
+    # 🔽 NOVO GRÁFICO: Emissões Totais por Escopo Direto
+    st.subheader("Gráfico de Emissões Totais por Escopo (tCO2e)")
+
+    escopos_diretos = ['EQ Escopo 1', 'EQ Escopo 2 - Baseada na localização', 'EQ Escopo 2 - Baseada na escolha de compra']
+    total_escopos = df[escopos_diretos].sum().reset_index()
+    total_escopos.columns = ['Escopo', 'Emissões']
+
+    chart_escopos = alt.Chart(total_escopos).mark_bar(size=30).encode(
+        x=alt.X('Escopo:N', sort='-y', title='Escopo'),
+        y=alt.Y('Emissões:Q', title='Emissões (toneladas CO2e)'),
+        color=alt.value('#2ca02c'),
+        tooltip=['Escopo', 'Emissões']
+    )
+
+    rotulos_escopos = alt.Chart(total_escopos).mark_text(
+        align='center',
+        baseline='bottom',
+        dy=-5,
+        fontSize=14
+    ).encode(
+        x='Escopo:N',
+        y='Emissões:Q',
+        text=alt.Text('Emissões:Q', format=',.0f')
+    )
+
+    st.altair_chart((chart_escopos + rotulos_escopos).properties(
+        width=600,
+        height=400,
+        title="Total de Emissões por Escopo (Direto)"
+    ), use_container_width=True)

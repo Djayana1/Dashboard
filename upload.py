@@ -1,60 +1,72 @@
 import streamlit as st
 import pandas as pd
+import os
 
-# Título da página
-st.title("📥 Upload e Integração de Dados do GHG Protocol")
+def mostrar_pagina_upload_etl():
+    st.title("📤 Upload e Integração de Dados")
 
-# Formulário para preenchimento de metadados
-with st.form("formulario_ghg"):
-    st.subheader("Preencha os dados da organização")
-    nome = st.text_input("Nome da empresa")
+    # Inputs manuais do usuário
+    nome = st.text_input("Nome da Organização")
     cnpj = st.text_input("CNPJ")
-    estado = st.selectbox("Estado", ["SP", "MG", "PA", "MA"])
-    ano = st.number_input("Ano do inventário", min_value=2000, max_value=2050, step=1, value=2023)
-    relatorio = st.selectbox("Tipo de Relatório", ["Controle Operacional", "Participação Acionária"])
-    arquivo = st.file_uploader("Selecione o arquivo do GHG Protocol (.xlsx)", type="xlsx")
-    enviar = st.form_submit_button("Executar ETL e Integrar")
+    estado = st.text_input("Estado (sigla)")
+    ano = st.number_input("Ano do Inventário", min_value=2000, max_value=2100, step=1, value=2023)
+    relatorio = st.selectbox("Tipo de Relatório", ["Controle Operacional", "Equivalência"])
 
-if enviar and arquivo:
+    # Upload do arquivo
+    arquivo = st.file_uploader("Envie o arquivo Excel (GHG Protocol)", type=["xlsx"])
+
+    if arquivo and nome and cnpj and estado and relatorio:
+        try:
+            df_ghg = pd.read_excel(arquivo, sheet_name="Registro Público de Emissões", skiprows=17, nrows=7)
+            df_ghg = df_ghg.rename(columns={
+                "GEE": "GEE",
+                "Escopo 1.1": "Escopo 1",
+                "Escopo 1.5": "EQ Escopo 1"
+            })
+
+            gases = ["CO2", "CH4", "N2O", "HFC", "PFC", "SF6", "NF3"]
+            df_ghg = df_ghg[df_ghg["GEE"].isin(gases)]
+
+            # Adiciona colunas fixas
+            df_ghg["NOME"] = nome
+            df_ghg["CNPJ"] = cnpj
+            df_ghg["ESTADO"] = estado
+            df_ghg["ANO"] = ano
+            df_ghg["Relatório"] = relatorio
+
+            # Preenche as colunas que faltam com None
+            colunas_finais = [
+                "NOME", "CNPJ", "ESTADO", "ANO", "Relatório", "GEE",
+                "Escopo 1", "Escopo 2 - Baseada na localização", "Escopo 2 - Baseada na escolha de compra", "Escopo 3",
+                "EQ Escopo 1", "EQ Escopo 2 - Baseada na localização", "EQ Escopo 2 - Baseada na escolha de compra", "EQ Escopo 3"
+            ]
+            for col in colunas_finais:
+                if col not in df_ghg.columns:
+                    df_ghg[col] = None
+
+            df_formatado = df_ghg[colunas_finais]
+
+            st.success("✅ Dados extraídos com sucesso. Pronto para salvar.")
+            st.dataframe(df_formatado)
+
+            # Botão para salvar no Resumo.csv
+            if st.button("➕ Adicionar ao Resumo.csv"):
+                salvar_em_resumo(df_formatado)
+
+        except Exception as e:
+            st.error(f"❌ Erro ao processar o arquivo: {e}")
+
+def salvar_em_resumo(novos_dados):
+    caminho_resumo = r"E:\Area de Trabalho\Dashboard\Resumo.csv"
+
+    if not os.path.exists(caminho_resumo):
+        st.error("Arquivo 'Resumo.csv' não encontrado.")
+        return
+
     try:
-        # Leitura das abas com Escopo 1 e 2
-        df1 = pd.read_excel(arquivo, sheet_name="Registro Público de Emissões", skiprows=45, nrows=20, usecols="A:D", engine="openpyxl")
-        df2 = pd.read_excel(arquivo, sheet_name="Registro Público de Emissões", skiprows=69, nrows=20, usecols="A:D", engine="openpyxl")
-
-        df1.columns = ["Categoria", "Emissões (tCO2e)", "Emissões de CO2 biogênico (t)", "Remoções de CO2 biogênico (t)"]
-        df1["ESCOPO"] = "Escopo 1"
-        df2.columns = df1.columns[:-1] + ["ESCOPO"]
-        df2["ESCOPO"] = "Escopo 2"
-
-        df_final = pd.concat([df1, df2], ignore_index=True)
-        df_final = df_final[df_final["Categoria"].notna() & ~df_final["Categoria"].astype(str).str.lower().str.contains("total")]
-
-        # Adiciona os metadados
-        df_final["NOME"] = nome
-        df_final["CNPJ"] = cnpj
-        df_final["ANO"] = ano
-        df_final["Relatório"] = relatorio
-        df_final["ESTADO"] = estado
-
-        df_final = df_final[[
-            "NOME", "CNPJ", "ESTADO", "ANO", "Relatório", "ESCOPO",
-            "Categoria", "Emissões (tCO2e)", "Emissões de CO2 biogênico (t)", "Remoções de CO2 biogênico (t)"
-        ]]
-
-        # Leitura do arquivo existente local
-        caminho = r"E:\\Area de Trabalho\\Dashboard\\Desagregados por categoria.csv"
-        df_existente = pd.read_csv(caminho, sep=";", decimal=",", encoding="utf-8")
-
-        # Conversão dos números
-        for col in ["Emissões (tCO2e)", "Emissões de CO2 biogênico (t)", "Remoções de CO2 biogênico (t)"]:
-            df_final[col] = pd.to_numeric(df_final[col], errors="coerce").fillna(0)
-
-        # Juntar e salvar
-        df_novo = pd.concat([df_existente, df_final], ignore_index=True)
-        df_novo.to_csv(caminho, sep=";", index=False, encoding="utf-8", decimal=",")
-
-        st.success("✅ Dados integrados com sucesso ao arquivo de desagregados!")
-        st.dataframe(df_final)
-
+        resumo_atual = pd.read_csv(caminho_resumo, sep=";", decimal=",", encoding="latin1")
+        df_unido = pd.concat([resumo_atual, novos_dados], ignore_index=True)
+        df_unido.to_csv(caminho_resumo, sep=";", decimal=",", index=False, encoding="latin1")
+        st.success("✅ Dados adicionados ao arquivo Resumo.csv com sucesso!")
     except Exception as e:
-        st.error(f"Erro ao processar o arquivo: {e}")
+        st.error(f"Erro ao salvar no Resumo.csv: {e}")
