@@ -10,8 +10,8 @@ def mostrar_pagina_tendencia():
 
 
     # Carregar dados
-    caminho = pd.read_csv("Resumo.csv", sep=';')
-    df = pd.read_csv(caminho, sep=";", decimal=",", encoding="latin1")
+    
+    df = pd.read_csv("Resumo.csv", sep=";", decimal=",", encoding="latin1")
 
     # Corrigir nomes de colunas
     df.rename(columns={
