@@ -1,7 +1,7 @@
 streamlit
 pandas
 altair
-plotly expess
+plotly==5.21.0
 scikit-learn
 matplotlib
 
