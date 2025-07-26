@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import json
 
 def mostrar_pagina_mapa(mostrar_legenda=False):
-    st.title("Estado da Organização Selecionada")
+    st.subheader("Estado Selecionado")
 
     # Carregar dados
     df = pd.read_csv(
@@ -98,6 +98,6 @@ def mostrar_pagina_mapa(mostrar_legenda=False):
                         ))
 
     fig.update_geos(fitbounds="locations", visible=False)
-    fig.update_layout(title="Estado da Organização Selecionada")
+    
 
     st.plotly_chart(fig, use_container_width=True)
