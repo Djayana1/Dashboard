@@ -1,7 +1,7 @@
 streamlit
 pandas
 altair
-plotly
+plotly expess
 scikit-learn
 matplotlib
-json
+
