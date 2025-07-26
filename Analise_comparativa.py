@@ -9,8 +9,8 @@ def mostrar_pagina_comparacao():
     st.title("Correlação entre Emissões da Alcoa e o SEEG Nacional")
 
     # Carregar os dados
-    df_seeg = pd.read_csv("E:/Area de Trabalho/Dashboard/SEEG - Nacional.csv", sep=";", decimal=",")
-    df_alcoa = pd.read_csv("E:/Area de Trabalho/Dashboard/Desagregados por categoria.csv", sep=";", decimal=",")
+    df_seeg = pd.read_csv("SEEG - Nacional.csv", sep=";", decimal=",")
+    df_alcoa = pd.read_csv("Desagregados por categoria.csv", sep=";", decimal=",")
 
     # Conversão de tipos
     anos_validos = [str(ano) for ano in range(2019, 2024)]
