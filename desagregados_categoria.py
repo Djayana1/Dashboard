@@ -7,7 +7,7 @@ def mostrar_pagina_categoria():
     mostrar_pagina_mapa(mostrar_legenda=False) 
 
     # Leitura dos dados
-    df_cat = pd.read_csv(r"E:\Area de Trabalho\Dashboard\Desagregados por categoria.csv", sep=';')
+    df_cat = pd.read_csv("Desagregados por categoria.csv", sep=';')
     df_cat.columns = df_cat.columns.str.strip()
 
     # Conversão de colunas numéricas

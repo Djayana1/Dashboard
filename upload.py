@@ -57,7 +57,7 @@ def mostrar_pagina_upload_etl():
             st.error(f"❌ Erro ao processar o arquivo: {e}")
 
 def salvar_em_resumo(novos_dados):
-    caminho_resumo = r"E:\Area de Trabalho\Dashboard\Resumo.csv"
+    caminho_resumo = pd.read_csv("Resumo.csv", sep=';')
 
     if not os.path.exists(caminho_resumo):
         st.error("Arquivo 'Resumo.csv' não encontrado.")

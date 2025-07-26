@@ -4,7 +4,7 @@ import altair as alt
 
 def mostrar_pagina_resumo():
     # Leitura da planilha
-    df = pd.read_csv(r"E:\Area de Trabalho\Dashboard\Resumo.csv", sep=';')
+    df = pd.read_csv("Resumo.csv", sep=';')
     df.columns = df.columns.str.strip()
 
     # Conversão de colunas numéricas

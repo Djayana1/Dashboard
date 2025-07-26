@@ -8,7 +8,7 @@ def mostrar_pagina_mapa(mostrar_legenda=False):
 
     # Carregar dados
     df = pd.read_csv(
-        r"E:\Area de Trabalho\Dashboard\Desagregados por categoria.csv",
+        "Desagregados por categoria.csv",
         sep=';',
         decimal=',',
         thousands='.',
@@ -16,7 +16,7 @@ def mostrar_pagina_mapa(mostrar_legenda=False):
     )
 
     # Carregar GeoJSON
-    with open(r"E:\Area de Trabalho\Dashboard\br_states.json", encoding='utf-8') as f:
+    with open("br_states.json", encoding='utf-8') as f:
         geojson = json.load(f)
 
     # Sidebar: estado para destaque
