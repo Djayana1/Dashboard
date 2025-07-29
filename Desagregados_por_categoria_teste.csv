@@ -1,0 +1,21 @@
+NOME;NOME FANTASIA;CNPJ;ESTADO;ANO;Relatório;ESCOPO;Gás;Categoria;Emissões (tCO2e);Emissões de CO2 biogênico (t);Remoções de CO2 biogênico (t)
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CO2 (t);Combustão móvel;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CO2 (t);Combustão estacionária;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CO2 (t);Processos industriais;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CO2 (t);Resíduos sólidos e efluentes líquidos;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CO2 (t);Fugitivas;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CH4 (t);Combustão móvel;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CH4 (t);Combustão estacionária;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CH4 (t);Processos industriais;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CH4 (t);Resíduos sólidos e efluentes líquidos;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;CH4 (t);Fugitivas;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;N2O (t);Combustão móvel;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;N2O (t);Combustão estacionária;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;N2O (t);Processos industriais;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;N2O (t);Resíduos sólidos e efluentes líquidos;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;N2O (t);Fugitivas;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;HFC (t);Combustão móvel;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;HFC (t);Combustão estacionária;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;HFC (t);Processos industriais;0;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;HFC (t);Resíduos sólidos e efluentes líquidos;;0;0
+Teste;Teste;12345678911;PE;2023;Controle Operacional;Escopo 1;HFC (t);Fugitivas;;0;0
