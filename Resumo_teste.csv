@@ -1,0 +1,38 @@
+GEE;Escopo 1;Escopo 2 - loc;Escopo 2 - compra;Escopo 3;EQ Escopo 1;EQ Escopo 2 - loc;EQ Escopo 2 - compra;EQ Escopo 3
+HFC-143;0;;;0;0;;;0
+HFC-143a;0;;;0;0;;;0
+HFC-152;0;;;0;0;;;0
+HFC-152a;0;;;0;0;;;0
+HFC-161;0;;;0;0;;;0
+HFC-227ea;0;;;0;0;;;0
+HFC-236cb;0;;;0;0;;;0
+HFC-236ea;0;;;0;0;;;0
+HFC-236fa;0;;;0;0;;;0
+HFC-245ca;0;;;0;0;;;0
+HFC-245fa;0;;;0;0;;;0
+HFC-365mfc;0;;;0;0;;;0
+HFC-43-10mee;0;;;0;0;;;0
+PFCs;0;;;0;0;;;0
+PFC-14;0;;;0;0;;;0
+PFC-116;0;;;0;0;;;0
+PFC-218;0;;;0;0;;;0
+PFC-318;0;;;0;0;;;0
+PFC-3-1-10;0;;;0;0;;;0
+PFC-4-1-12;0;;;0;0;;;0
+PFC-5-1-14;0;;;0;0;;;0
+PFC-9-1-18;0;;;0;0;;;0
+Trifluorometil pentafluoreto de enxofre;0;;;0;0;;;0
+Perfluorociclopropano;0;;;0;0;;;0
+SF6;0;;;0;0;;;0
+NF3;0;;;0;0;;;0
+Emissões de CO2 biogênico;;;;;;;;
+;Escopo 1;"Escopo 2 (abordagem por ""localização"")";"Escopo 2 
+(abordagem por ""escolha de compra"")";Escopo 3;;;;
+CO2 (t);1339.0202826000002;0;0;0;;;;
+CH4 (t);;;;;;;;
+N2O (t);;;;;;;;
+HFC (t);;;;;;;;
+PFC (t);;;;;;;;
+SF6 (t);;;;;;;;
+NF3 (t);;;;;;;;
+Emissões de CO2 biogênico (t);1339.0202826000002;0;0;0;;;;
