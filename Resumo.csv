@@ -1,42 +1,8 @@
-NOME;CNPJ;ESTADO;ANO;Relatório;GEE;Escopo 1;Escopo 2 - Baseada na localização;Escopo 2 - Baseada na escolha de compra;Escopo 3;EQ Escopo 1;EQ Escopo 2 - Baseada na localização;EQ Escopo 2 - Baseada na escolha de compra;EQ Escopo 3;Unidade
-Djay_teste;12345645;PE;2025;Controle Operacional;;GEE ;Escopo 1;Escopo 2 - Abordagem localização;"Escopo 2 - 
-Abordagem 
-escolha de compra";Escopo 3;Escopo 1;Escopo 2 - Abordagem localização;"Escopo 2 - 
-Abordagem 
-escolha de compra";Escopo 3
-Djay_teste;12345645;PE;2025;Controle Operacional;;CO2;88551.406152;0;0;0;88551.406152;0;0;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;CH4  ;3.766864;0;0;0;105.472192;0;0;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;N2O;0.710353;0;0;0;188.243545;0;0;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-23;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-32;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-41;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-125;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-134;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-134a;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-143;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-143a;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-152;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-152a;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-161;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-227ea;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-236cb;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-236ea;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-236fa;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-245ca;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-245fa;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-365mfc;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;HFC-43-10mee;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC-14;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC-116;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC-218;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC-318;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC-3-1-10;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC-4-1-12;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC-5-1-14;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;PFC-9-1-18;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;Trifluorometil pentafluoreto de enxofre;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;Perfluorociclopropano;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;SF6;0;;;0;0;;;0
-Djay_teste;12345645;PE;2025;Controle Operacional;;NF3;0;;;0;0;;;0
+NOME;CNPJ;ESTADO;ANO;Relatório;GEE;Escopo 1;Escopo 2 - Baseada na localização;Escopo 2 - Baseada na escolha de compra;EQ Escopo 1;EQ Escopo 2 - Baseada na localização;EQ Escopo 2 - Baseada na escolha de compra;EQ Escopo 3;Unidade
+Djay_teste4;123456789789;PE;2025;Controle Operacional;CO2;88551.406152;0.0;0.0;88551.406152;0.0;0.0;0;0
+Djay_teste4;123456789789;PE;2025;Controle Operacional;CH4;3.766864;0.0;0.0;105.472192;0.0;0.0;0;0
+Djay_teste4;123456789789;PE;2025;Controle Operacional;N2O;0.710353;0.0;0.0;188.243545;0.0;0.0;0;0
+Djay_teste4;123456789789;PE;2025;Controle Operacional;HFC;0.0;0.0;0.0;0.0;0.0;0.0;0;0
+Djay_teste4;123456789789;PE;2025;Controle Operacional;PFC;0.0;0.0;0.0;0.0;0.0;0.0;0;0
+Djay_teste4;123456789789;PE;2025;Controle Operacional;SF6;0.0;0.0;0.0;0.0;0.0;0.0;0;0
+Djay_teste4;123456789789;PE;2025;Controle Operacional;NF3;0.0;0.0;0.0;0.0;0.0;0.0;0;0
