@@ -1,14 +1,66 @@
-NOME;CNPJ;ESTADO;ANO;Relatório;ESCOPO;Categoria;Emissões (tCO2e);Emissões de CO2 biogênico (t);Remoções de CO2 biogênico (t)
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 1;Combustão  móvel;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 1;Combustão  estacionária;88845.121889;1339.0202826000002;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 1;Processos  industriais;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 1;Resíduos sólidos e efluentes líquidos;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 1;Fugitivas;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 1;Atividades agrícolas;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 1;Mudança no uso do solo;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia elétrica;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia térmica;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 2 - Baseada na localização;Perdas por transmissão e distribuição;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia elétrica;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia térmica;0.0;0.0;0
-Djay_teste4;123456789789;PE;2025;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Perdas por transmissão e distribuição;0.0;0.0;0
+NOME;CNPJ;ANO;Relatório;ESCOPO;Categoria;Emissões (tCO2e);Emissões de CO2 biogênico (t);Remoções de CO2 biogênico (t)
+Alcoa;123456789;2023;Controle Operacional;Escopo 1;Combustão  móvel;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 1;Combustão  móvel;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 1;Combustão  móvel;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 1;Combustão  móvel;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 1;Combustão  móvel;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 1;Combustão  estacionária;88845.121889;1339.0202826000002;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 1;Combustão  estacionária;88845.121889;1339.0202826000002;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 1;Combustão  estacionária;88845.121889;1339.0202826000002;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 1;Combustão  estacionária;88845.121889;1339.0202826000002;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 1;Combustão  estacionária;88845.121889;1339.0202826000002;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 1;Processos  industriais;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 1;Processos  industriais;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 1;Processos  industriais;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 1;Processos  industriais;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 1;Processos  industriais;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 1;Resíduos sólidos e efluentes líquidos;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 1;Resíduos sólidos e efluentes líquidos;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 1;Resíduos sólidos e efluentes líquidos;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 1;Resíduos sólidos e efluentes líquidos;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 1;Resíduos sólidos e efluentes líquidos;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 1;Fugitivas;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 1;Fugitivas;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 1;Fugitivas;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 1;Fugitivas;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 1;Fugitivas;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 1;Atividades agrícolas;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 1;Atividades agrícolas;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 1;Atividades agrícolas;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 1;Atividades agrícolas;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 1;Atividades agrícolas;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 1;Mudança no uso do solo;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 1;Mudança no uso do solo;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 1;Mudança no uso do solo;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 1;Mudança no uso do solo;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 1;Mudança no uso do solo;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 2 - Baseada na localização;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 2 - Baseada na localização;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 2 - Baseada na localização;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 2 - Baseada na localização;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 2 - Baseada na localização;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 2 - Baseada na localização;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia elétrica;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Aquisição de energia térmica;0.0;0.0;0
+Alcoa;123456789;2023;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2019;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2020;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2021;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Perdas por transmissão e distribuição;0.0;0.0;0
+Alcoa;123456789;2022;Controle Operacional;Escopo 2 - Baseada na escolha de compra;Perdas por transmissão e distribuição;0.0;0.0;0
