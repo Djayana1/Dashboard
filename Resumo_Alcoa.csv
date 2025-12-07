@@ -1,4 +1,4 @@
-﻿NOME;NOME FANTASIA;CNPJ;ESTADO;ANO;RelatÃ³rio;GEE;Escopo 1;Escopo 2 - Baseada na localizaÃ§Ã£o;Escopo 2 - Baseada na escolha de compra;EQ Escopo 1;EQ Escopo 2 - Baseada na localizaÃ§Ã£o;EQ Escopo 2 - Baseada na escolha de compra
+﻿NOME;NOME FANTASIA;CNPJ;ESTADO;ANO;Relatório;GEE;Escopo 1;Escopo 2 - Baseada na localização;Escopo 2 - Baseada na escolha de compra;EQ Escopo 1;EQ Escopo 2 - Baseada na localização;EQ Escopo 2 - Baseada na escolha de compra
 Alcoa AlumÃ­nio S.A. ;Alcoa;23.637.697/0135-13;SP;2021;Controle Operacional;CO2;2378561.08;62533.03;0;2378561.08;62533.03;0
 Alcoa AlumÃ­nio S.A. ;Alcoa;23.637.697/0135-13;SP;2021;Controle Operacional;CH4;178;0;0;4983.86;0;0
 Alcoa AlumÃ­nio S.A. ;Alcoa;23.637.697/0135-13;SP;2021;Controle Operacional;N2O;29.38;0;0;7785.17;0;0
@@ -448,3 +448,4 @@ Alcoa AlumÃ­nio S.A. PoÃ§os de Caldas;Alcoa PoÃ§os de Caldas;23.637.697/00
 Alcoa AlumÃ­nio S.A. PoÃ§os de Caldas;Alcoa PoÃ§os de Caldas;23.637.697/0001-01;MG;2023;ParticipaÃ§Ã£o SocietÃ¡ria;CH4;12.65;0;0;316.3;0;0
 Alcoa AlumÃ­nio S.A. PoÃ§os de Caldas;Alcoa PoÃ§os de Caldas;23.637.697/0001-01;MG;2023;ParticipaÃ§Ã£o SocietÃ¡ria;N2O;0.26;0;0;76.29;0;0
 Alcoa AlumÃ­nio S.A. PoÃ§os de Caldas;Alcoa PoÃ§os de Caldas;23.637.697/0001-01;MG;2023;ParticipaÃ§Ã£o SocietÃ¡ria;HFC;0.24;0;0;470.16;0;0
+
